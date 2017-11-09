@@ -1,0 +1,123 @@
+{
+	"studentID" : 1,
+	"name" : "harry",
+	"surname" : "aroun",
+	"course": {
+		"courseID": "COU1",
+		"name": "Data science",
+		"modules": [
+			{
+				"moduleID": 1,
+				"name": "IIR",
+				"lecturer":{
+					"lecturerID": 1,
+					"name": "yasir",
+					"surname": "khan"
+				}
+			},
+			{
+				"moduleID": 2,
+				"name": "DB management",
+				"lecturer":{
+					"lecturerID": 2,
+					"name": "rachid",
+					"surname": "ahnan"
+				}	
+			}
+			
+		]
+	}
+}
+
+{
+	"studentID" : 2,
+	"name" : "huzefa",
+	"surname" : "S",
+	"course": {
+		"courseID": "COU1",
+		"name": "Data science",
+		"modules": [
+			{
+				"moduleID": 1,
+				"name": "IIR",
+				"lecturer":{
+					"lecturerID": 1,
+					"name": "yasir",
+					"surname": "khan"
+				}
+			},
+			{
+				"moduleID": 2,
+				"name": "DB management",
+				"lecturer":{
+					"lecturerID": 2,
+					"name": "rachid",
+					"surname": "ahnan"
+				}	
+			}
+			
+		]
+	}
+}
+
+{
+	"studentID" : 3,
+	"name" : "ahmet",
+	"surname" : "G",
+	"course": {
+		"courseID": "COU1",
+		"name": "Data science",
+		"modules": [
+			{
+				"moduleID": 1,
+				"name": "IIR",
+				"lecturer":{
+					"lecturerID": 1,
+					"name": "yasir",
+					"surname": "khan"
+				}
+			},
+			{
+				"moduleID": 2,
+				"name": "DB management",
+				"lecturer":{
+					"lecturerID": 2,
+					"name": "rachid",
+					"surname": "ahnan"
+				}	
+			}
+			
+		]
+	}
+}
+
+{
+	"studentID" : 4,
+	"name" : "shri",
+	"surname" : "K",
+	"course": {
+		"courseID": "COU1",
+		"name": "Data science",
+		"modules": [
+			{
+				"moduleID": 1,
+				"name": "IIR",
+				"lecturer":{
+					"lecturerID": 1,
+					"name": "yasir",
+					"surname": "khan"
+				}
+			},
+			{
+				"moduleID": 2,
+				"name": "DB management",
+				"lecturer":{
+					"lecturerID": 2,
+					"name": "rachid",
+					"surname": "ahnan"
+				}	
+			}
+			
+		]
+	}
+}
