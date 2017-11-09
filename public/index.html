@@ -1,20 +1,71 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Student manager</title>
-    <link href="https://fonts.googleapis/css?family=Raleway" rel="stylesheet">
-    <link href="/styles.css" rel="stylesheet" type="text/css"/>
-  </head>
-  <body>
-    <h1 class="title">Student Manager</h1>
-      <div id="homepage">
-        <h1>Find Students</h1>
-        <div id="students"></div>
-      </div>
+<head>
+  <meta charset="utf-8">
+  <title>Student manager</title>
+  <link href="http://fonts.googleapis.com/css?family=Raleway+Dots" rel="stylesheet">
+  <link href="/styles.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <h1 class="title">Student Manager</h1>
+  <div id="homepage">
+    <h1>Find Students</h1>
+    <div id="student"></div>
+  </div>
 
-      <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-      <script src="https://unpkg.com/react@15/react.js"></script>
-      <script src="https://unpkg.com/react-dom@15/react-dom.min.js"></script>
-  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.0/react.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.0/react-dom.min.js"></script>
+
+  <!-- create React Component -->
+  <script type="text/babel">
+
+  var Student = React.createClass({
+    getInitialState: function(){
+      return({
+        student:[]
+      });
+    },
+
+    render: function(){
+      var student = this.state.student;
+      student = student.map(function(student, index){
+        return(
+          <li key={index}>
+          <span className="name">{student.obj.name}</span>
+          <span className="surname">{student.obj.surname}</span>
+          <span className="courseID">{student.obj.course.courseID}</span>
+          </li>
+        );
+      });
+      return(
+        <div id="stu-container">
+        <form id="search" onSubmit={this.handleSubmit}>
+        <label>Enter the studentID</label>
+        <input type="text" ref="studentID" placeholder="studentID" required/>
+        <input type="submit" value="Find Student"/>
+        </form>
+        <ul>{student}</ul>
+        </div>
+      );
+    },
+    handleSubmit: function(e){
+      e.preventDefault();
+      var id = this.refs.studentID.value;
+
+      fetch('/api/students/'+id).then(function(data){
+        return data.json();
+      }).then(json => {
+        this.setState({
+          student: json
+        });
+      });
+    }
+  });
+
+  ReactDOM.render(<Student/>, document.getElementById('student'));
+
+
+  </script>
+</body>
 </html>
